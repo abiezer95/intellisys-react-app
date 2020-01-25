@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+
+@keyframes scalas {
+  0% {color:#04B4AE;opacity:0.8}
+  50%  {color:#086A87;}
+  // 75% {transform: scale(1.4,1.4);}
+  100% {color:#fff;opacity:0.8}
+}
+
 .Container {
   position: absolute;
   width: 100%;
@@ -21,24 +30,13 @@
       margin-left:10px;
       font-size:24px;
       color:#fff;
+      animation-name: scalas;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      transition:color 0.5s;
+      font-family: 'Permanent Marker', cursive;
     }
   }
-}
-
-.wallpaper-info{
-  position:absolute;
-  width:70%;
-  height:200px;
-  top:5px;
-  left:0;right:0;
-  margin-left:auto;margin-right:auto;
-  background-image: url(https://wallpapercave.com/wp/wp2044116.jpg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  // background-attachment: fixed;
-  background-size: cover;
-  border-radius:5px;
-  box-shadow:0 0 20px rgba(0,0,0,0.3)
 }
 
 .wall {
@@ -48,16 +46,32 @@
   .content{
     position: relative;
     display:flex;
-    // justify-content: center;
+    justify-content: center;
     width:95%;
     flex-wrap: wrap;
-    top: 220px;
-    left: 100px;
+    // top: 220px;
+    left: 40px;
     .card{
       position:relative;
       margin-left:10px;
       margin-top:10px;
-      width: 200px;
+      width: 220px;
+      cursor:pointer;
+      transition:transform 0.3s;
+      &:hover{
+        transform: scale(1.1,1.1);
+        
+      }
+      .card-title{
+        font-size:17px;
+      }
+      .card-text tt, li{
+        display:inline-block;
+        width: 155px !important;
+        white-space: nowrap;
+        overflow: hidden !important;
+        text-overflow: ellipsis;
+      }
     }
   }
 }

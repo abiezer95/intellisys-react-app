@@ -1,7 +1,7 @@
 import React from 'react'
 import logo from '../assets/img/forex-icon.png'
 
-const title = 'Forex data';
+const title = 'CryptoCurrency data';
 
 class Header extends React.Component {
     render() {
