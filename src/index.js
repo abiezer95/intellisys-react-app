@@ -3,21 +3,23 @@ import ReactDOM from 'react-dom';
 import './assets/css/main.css';
 import Main from './views/Main';
 import Crypto from './views/Crypto';
+import NotFound from './views/404';
 
 import {
     BrowserRouter as Root,
     Route,
-    // Switch,
-    
-    Link,
+    Switch,
     // useRouteMatch,
     // useParams
   } from "react-router-dom";
 
 ReactDOM.render(
     <Root>
-      <Route exact path="/" component={Main} />
-      <Route exact path="/crypto" component={Crypto} />
+      <Switch>
+        <Route exact path="/" component={Main} />
+        <Route exact path="/crypto/:id" component={Crypto} />
+        <Route component={NotFound} />
+      </Switch>
     </Root>
 , document.getElementById('root'));
 
